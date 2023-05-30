@@ -1,0 +1,8 @@
+name=Legend of Mu
+author=Poopy Productions
+description=In a quest to understand the Universe, a monk named Mu explores the depths of his mind.
+bundleID=com.kennycason.legendofmu
+version=0.1
+buildNumber=123
+imagePath=SystemAssets/
+launchSoundPath=sfx/jump
