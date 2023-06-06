@@ -103,6 +103,9 @@ function importTilemapsFromTiledJSON(path)
 	for i=1, #jsonTable.layers do
 		local level = {}
 		local layer = jsonTable.layers[i]
+		if layer.name ~= "bg" and layer.name ~= "walls" then
+			goto continue
+		end
 		
 		level.name = layer.name
 		level.x = layer.x
@@ -112,12 +115,13 @@ function importTilemapsFromTiledJSON(path)
 				
 		local tileset = nil
 		local tilesetName = tilesetNameForProperies(layer.properties)
+
 		if tilesetName ~= nil then
 			tileset = tilesetWithName(tilesets, tilesetName)
 		end
-		
+
 		if tileset ~= nil then
-		
+	
 			level.pixelHeight = level.tileHeight * tileset.tileHeight
 			level.pixelWidth = level.tileWidth * tileset.tileWidth
 		
@@ -127,7 +131,7 @@ function importTilemapsFromTiledJSON(path)
 						
 			-- we want our indexes for each tileset to be 1-based, so remove the offset that Tiled adds.
 			-- this is only makes sense because because we have exactly one tilemap image per layer
-			local indexModifier = tileset.firstgid-1		
+			local indexModifier = tileset.firstgid-1	
 			
 			local tileData = layer.data
 			
@@ -140,7 +144,7 @@ function importTilemapsFromTiledJSON(path)
 				
 				if tileIndex > 0 then
 					tileIndex = tileIndex - indexModifier
-					tilemap:setTileAtPosition(x, y, tileIndex)	
+					tilemap:setTileAtPosition(x, y, tileIndex)
 				end
 				
 				x = x + 1
@@ -154,6 +158,7 @@ function importTilemapsFromTiledJSON(path)
 			layers[layer.name] = level
 			
 		end
+	    ::continue::
 	end
 		
 	return layers

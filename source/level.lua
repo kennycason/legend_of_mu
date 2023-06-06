@@ -12,9 +12,12 @@ local abs, floor, ceil, min, max = math.abs, math.floor, math.ceil, math.min, ma
 local displayWidth, displayHeight = playdate.display.getSize()
 local halfDisplayWidth = displayWidth / 2
 
--- tilemaps
+-- tile layers
 local walls
-local background
+local bg
+local objects
+
+-- the player
 local player = Player()
 
 -- constants
@@ -59,13 +62,12 @@ function Level:init(pathToLevelJSON)
 	self.layers = importTilemapsFromTiledJSON(pathToLevelJSON)
 	
 	-- set up local references for the layers we read
-	walls = self.layers["Walls"]
-	background = self.layers["Background"]
-	sprites = self.layers["Sprites"]
+	walls = self.layers["walls"]
+	bg = self.layers["bg"]
+	objects = self.layers["objects"]
 	
-	self:setBounds(0, 0, background.pixelWidth, background.pixelHeight)
-
-	maxX = background.pixelWidth - displayWidth - TILE_SIZE
+	self:setBounds(0, 0, bg.pixelWidth, bg.pixelHeight)
+	maxX = bg.pixelWidth - displayWidth - TILE_SIZE
 	
 	self:setupWallSprites()
 	self:setupSprites()
@@ -206,7 +208,7 @@ end
 
 
 function Level:draw(x, y, width, height)
-	background.tilemap:draw(0, 0)
+	bg.tilemap:draw(0, 0)
 	walls.tilemap:draw(0, 0)
 end
 
@@ -224,27 +226,24 @@ end
 
 
 function Level:setupSprites()
-		
-	local tilemap = sprites.tilemap	
-	local width, height = tilemap:getSize()
+    -- load from objects layer
+	-- local tilemap = sprites.tilemap	
+	-- local width, height = tilemap:getSize()
 
-	for column = 1, width + 1 do
-		
-		for row = 1, height do
-		
-			local gid = tilemap:getTileAtPosition(column, row)
+	-- for column = 1, width + 1 do
+	-- 	for row = 1, height do
+	-- 		local gid = tilemap:getTileAtPosition(column, row)
 			
-			if gid ~= nil and gid > 0 then
-				
-				-- if gid == COIN_GID then
-				-- 	self:addCoinSprite(column, row)
-				-- elseif gid == ENEMY_GID then
-				-- 	self:addEnemySprite(column, row)
-				-- end
-			end
+	-- 		if gid ~= nil and gid > 0 then
+	-- 			-- if gid == COIN_GID then
+	-- 			-- 	self:addCoinSprite(column, row)
+	-- 			-- elseif gid == ENEMY_GID then
+	-- 			-- 	self:addEnemySprite(column, row)
+	-- 			-- end
+	-- 		end
 			
-		end
-	end
+	-- 	end
+	-- end
 	
 end
 
