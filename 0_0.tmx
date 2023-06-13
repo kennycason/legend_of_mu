@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="26" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="26" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="5">
  <editorsettings>
-  <export target="src/0_0.json" format="json"/>
+  <export target="source/maps/0_0.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="sprites" tilewidth="16" tileheight="16" tilecount="2" columns="2">
-  <image source="src/img/sprites-table-16-16.png" trans="ff00ff" width="32" height="16"/>
+  <image source="source/img/sprites-table-16-16.png" trans="ff00ff" width="32" height="16"/>
  </tileset>
  <tileset firstgid="3" name="bg" tilewidth="16" tileheight="16" tilecount="1000" columns="40">
-  <image source="src/img/legend_of_mu-2-table-16-16.png" width="640" height="400"/>
+  <image source="source/img/legend_of_mu-2-table-16-16.png" width="640" height="400"/>
  </tileset>
- <layer id="2" name="Background" width="26" height="15">
+ <layer id="2" name="bg" width="26" height="15">
   <properties>
    <property name="tileset" value="bg"/>
   </properties>
@@ -31,7 +31,7 @@
 57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,0
 </data>
  </layer>
- <layer id="1" name="Walls" width="26" height="15">
+ <layer id="1" name="walls" width="26" height="15">
   <properties>
    <property name="tileset" value="bg"/>
   </properties>
@@ -40,7 +40,7 @@
 0,0,0,0,0,0,0,19,97,97,98,163,181,181,181,165,51,10,10,10,10,10,10,10,10,10,
 0,0,0,0,0,0,57,58,136,0,138,163,164,164,164,165,0,51,51,51,51,51,10,10,10,10,
 0,0,0,0,0,19,97,98,0,0,0,203,204,127,164,165,0,0,0,0,0,0,51,10,10,10,
-0,0,0,0,57,58,137,138,0,0,0,0,0,163,164,165,0,0,175,252,253,254,215,10,10,10,
+0,0,0,0,57,58,137,138,0,0,0,0,0,163,164,165,0,0,175,93,94,95,215,10,10,10,
 0,0,0,19,97,98,0,0,0,0,0,0,0,163,164,165,0,0,0,133,0,135,0,10,10,10,
 0,0,0,58,137,138,0,0,0,0,0,0,0,163,164,165,0,0,0,0,0,0,0,51,10,10,
 0,0,57,58,0,0,0,0,0,0,0,0,0,328,329,330,0,0,0,0,0,0,0,0,10,10,
@@ -53,26 +53,13 @@
 0,0,0,0,0,58,56,57,58,16,17,17,17,18,163,164,165,11,11,10,10,10,10,10,10,10
 </data>
  </layer>
- <layer id="3" name="Sprites" width="26" height="15">
-  <properties>
-   <property name="tileset" value="sprites"/>
-  </properties>
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-</data>
- </layer>
+ <objectgroup id="4" name="objects">
+  <object id="3" name="door" class="door" gid="134" x="320" y="96" width="16" height="16">
+   <properties>
+    <property name="to_map" value="0_0_house"/>
+    <property name="to_x" type="int" value="16"/>
+    <property name="to_y" type="int" value="5"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
