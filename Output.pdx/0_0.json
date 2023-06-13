@@ -106,7 +106,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":4,
+ "nextobjectid":5,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
@@ -115,7 +115,7 @@
         {
          "columns":2,
          "firstgid":1,
-         "image":"..\/img\/sprites-table-16-16.png",
+         "image":"./img\/sprites-table-16-16.png",
          "imageheight":16,
          "imagewidth":32,
          "margin":0,
@@ -129,7 +129,7 @@
         {
          "columns":40,
          "firstgid":3,
-         "image":"..\/img\/legend_of_mu-2-table-16-16.png",
+         "image":"./img\/legend_of_mu-2-table-16-16.png",
          "imageheight":400,
          "imagewidth":640,
          "margin":0,

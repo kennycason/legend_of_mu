@@ -4,7 +4,10 @@
 ## Compile project
 
 ```sh
-PLAYDATE_SDK_PATH=/Users/kenny/Developer/PlaydateSDK-1.13.7
+export PLAYDATE_SDK_PATH=/Users/kenny/Developer/PlaydateSDK-1.13.7
+```
+
+```sh
 $PLAYDATE_SDK_PATH/bin/pdc source legend_of_mu
 ```
 

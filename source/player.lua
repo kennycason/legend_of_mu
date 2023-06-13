@@ -68,6 +68,10 @@ function Player:update()
 	elseif playdate.buttonIsPressed("down") then
 		self:walkDown()
 	end
+
+	if playdate.buttonIsPressed("a") then
+		level = Level('0_0_house.json')
+	end
 	
 	self.velocity.x = self.velocity.x * GROUND_FRICTION
 	self.velocity.y = self.velocity.y * GROUND_FRICTION
