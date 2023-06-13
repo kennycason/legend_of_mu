@@ -28,6 +28,13 @@ end
 
 
 function SoundManager:playBackgroundMusic()
-	local filePlayer = snd.fileplayer.new('sfx/main_theme')
+	filePlayer = snd.fileplayer.new('sfx/main_theme')
 	filePlayer:play(0) -- repeat forever
+	return filePlayer
+end
+
+function SoundManager:stopBackgroundMusic()
+	if filePlayer ~= nil then
+		filePlayer:stop()
+	end
 end

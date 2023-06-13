@@ -77,7 +77,9 @@ function Level:init(pathToLevelJSON)
 	self:addSprite()
 	
 	-- start playing background music
+	SoundManager:stopBackgroundMusic()
 	SoundManager:playBackgroundMusic()
+
 end
 
 --! Utility
@@ -113,7 +115,6 @@ end
 --! Sprite Movement
 
 function Level:movePlayer()
-	
 	if player.position.y > MAX_PLAYER_Y then	-- fell off of the world! Respawn at the beginning
 		player:reset()
 		player:moveTo(player.position)
